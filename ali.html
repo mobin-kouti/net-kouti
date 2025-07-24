@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>دفتر ازدواج و طلاق کوتی</title>
+  <style>
+    @font-face {
+      font-family: 'BTitr';
+      src: url('fonts/BTitr.ttf') format('truetype');
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'BTitr', Tahoma, sans-serif;
+      margin: 0;
+      background-color: #ffffff;
+      color: #2e7d32;
+      line-height: 1.5;
+    }
+
+    header {
+      background-color: #2e7d32;
+      color: white;
+      padding: 20px 30px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .tagline {
+      background-color: #388e3c;
+      color: white;
+      padding: 15px 20px;
+      font-size: 22px;
+      text-align: center;
+      animation: fadein 1.5s ease-in-out;
+      font-weight: bold;
+    }
+
+    @keyframes fadein {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    nav {
+      background-color: #e8e8e8;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    nav button {
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 17px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      font-weight: bold;
+      min-width: 120px;
+    }
+
+    nav button:hover {
+      background-color: #1b5e20;
+      transform: scale(1.05);
+    }
+
+    main {
+      max-width: 700px;
+      margin: 30px auto 60px;
+      padding: 0 15px;
+    }
+
+    img.center-couple {
+      width: 220px;
+      max-width: 90vw;
+      display: block;
+      margin: 25px auto;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    .card {
+      background-color: #f9fdfa;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 25px 30px;
+      margin-bottom: 30px;
+    }
+
+    h2, h3 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      color: #2e7d32;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form select {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 8px 0 20px 0;
+      border: 1.5px solid #2e7d32;
+      border-radius: 10px;
+      font-size: 16px;
+      font-family: 'BTitr', Tahoma, sans-serif;
+    }
+
+    form input[type="submit"] {
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      padding: 14px 0;
+      width: 100%;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    form input[type="submit"]:hover {
+      background-color: #1b5e20;
+    }
+
+    .checkbox-group {
+      margin-bottom: 20px;
+    }
+
+    footer {
+      background-color: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 22px 15px;
+      font-size: 16px;
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  دفتر ازدواج و طلاق کوتی
+</header>
+
+<div class="tagline">بهترین روز زندگی خود را به ما بسپارید</div>
+
+<img src="images/couple.jpg" alt="عروس و داماد چادری" class="center-couple" />
+
+<nav>
+  <button onclick="showSection('about')">درباره دفتر</button>
+  <button onclick="showSection('loan')">ثبت نام وام ازدواج</button>
+</nav>
+
+<main>
+  <section id="about" class="card" style="display: block;">
+    <h2>درباره دفتر ازدواج و طلاق 10 - 123</h2>
+    <p>ثبت ازدواج و طلاق رسمی، مشاوره حقوقی، صدور گواهی با مجوز رسمی.</p>
+  </section>
+
+  <section id="loan" class="card" style="display: none;">
+    <h3>ثبت نام وام ازدواج</h3>
+    <form action="https://formspree.io/f/xpwlpkgw" method="POST">
+      <div class="checkbox-group">
+        <label><input type="radio" name="نقش" value="زوج" required /> زوج</label>
+        <label><input type="radio" name="نقش" value="زوجه" /> زوجه</label>
+      </div>
+
+      <input type="text" name="نام_و_نام_خانوادگی" placeholder="نام و نام خانوادگی" required />
+
+      <input type="text" name="کد_ملی_متقاضی" placeholder="کد ملی متقاضی" required pattern="\d{10}" title="کد ملی باید ۱۰ رقم باشد" />
+
+      <input type="text" name="کد_ملی_همسر" placeholder="کد ملی همسر" required pattern="\d{10}" title="کد ملی باید ۱۰ رقم باشد" />
+
+      <label for="birthdate">تاریخ تولد:</label>
+      <input type="text" id="birthdate" name="تاریخ_تولد" placeholder="مثال: 1379/02/12" required />
+
+      <label for="marriageDate">تاریخ ازدواج:</label>
+      <input type="text" id="marriageDate" name="تاریخ_ازدواج" placeholder="مثال: 1404/04/04" required />
+
+      <input type="text" name="کد_پستی" placeholder="کد پستی" required pattern="\d{10}" title="کد پستی باید ۱۰ رقم باشد" />
+
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="تلفن_بنام_متقاضی" value="بله" /> تلفن بنام متقاضی باشد</label>
+      </div>
+
+      <label for="bankSelect">انتخاب بانک:</label>
+      <select id="bankSelect" name="بانک" required>
+        <option value="" disabled selected>بانک مورد نظر خود را انتخاب کنید</option>
+        <option value="بانک ملت">بانک ملت</option>
+        <option value="بانک صادرات">بانک صادرات</option>
+        <option value="بانک ملی">بانک ملی</option>
+        <option value="بانک سامان">بانک سامان</option>
+        <option value="بانک پارسیان">بانک پارسیان</option>
+      </select>
+
+      <input type="text" name="تلفن" placeholder="شماره تلفن همراه" required pattern="09\d{9}" title="شماره تلفن باید با 09 شروع شود و 11 رقم باشد" />
+
+      <input type="submit" value="ارسال فرم ثبت نام" />
+    </form>
+  </section>
+</main>
+
+<footer>
+  📍 اهواز، خیابان امت، دفتر ازدواج کوتی<br />
+  📞 09302376318 | 09169084060
+</footer>
+
+<script>
+  function showSection(id) {
+    document.querySelectorAll('main section').forEach(section => {
+      section.style.display = 'none';
+    });
+    document.getElementById(id).style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
